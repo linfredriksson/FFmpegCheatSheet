@@ -1,1 +1,8 @@
+#
+# FFmpeg Cheat Sheet
+#
 
+#
+# Burn in tc on video
+#
+ffmpeg -i video_a.mov -vcodec mjpeg -cmp 22 -vf "drawtext=fontfile=consolab.ttf: timecode='01\:20\:30\:00': r=30: x=(w-tw)/2: y=(2*lh): fontcolor=white: box=1: boxcolor=0x00000099: fontsize=100" -y video_b.mov
