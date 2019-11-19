@@ -1,13 +1,10 @@
-#
 # FFmpeg Cheat Sheet
-#
 
-#
 # Set start frame timecode on video
-#
 ffmpeg.exe -i video_a.mov -acodec copy -vcodec copy -timecode 01:20:30:00 video_b.mov
 
-#
 # Burn in tc on video
-#
 ffmpeg -i video_a.mov -vcodec mjpeg -cmp 22 -vf "drawtext=fontfile=consolab.ttf: timecode='01\:20\:30\:00': r=30: x=(w-tw)/2: y=(2*lh): fontcolor=white: box=1: boxcolor=0x00000099: fontsize=100" -y video_b.mov
+
+# Extract one frame for every second of video
+ffmpeg -i input.mov -vf fps=1 out_%04.png
