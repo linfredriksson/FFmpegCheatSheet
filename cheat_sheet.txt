@@ -8,3 +8,6 @@ ffmpeg -i video_a.mov -vcodec mjpeg -cmp 22 -vf "drawtext=fontfile=consolab.ttf:
 
 # Extract one frame for every second of video
 ffmpeg -i input.mov -vf fps=1 out_%04d.png
+
+# Undistort GoPro video distortion
+ffmpeg -i in.mp4 -vf "lenscorrection=cx=0.5:cy=0.5:k1=-0.227:k2=-0.022" out.mp4
