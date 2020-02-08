@@ -11,3 +11,6 @@ ffmpeg -i input.mov -vf fps=1 out_%04d.png
 
 # Undistort GoPro video distortion
 ffmpeg -i in.mp4 -vf "lenscorrection=cx=0.5:cy=0.5:k1=-0.227:k2=-0.022" out.mp4
+
+# Generate gif from frames
+ffmpeg -i in.avi -loop 0 out.gif
